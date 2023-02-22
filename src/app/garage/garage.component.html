@@ -1,0 +1,30 @@
+<div>
+  <label for="marca">Marca:</label>
+  <input type="text" id="marca" [(ngModel)]="marca">
+</div>
+
+<div>
+  <label for="modello">Modello:</label>
+  <input type="text" id="modello" [(ngModel)]="modello">
+</div>
+
+<div>
+  <label for="cambio">Cambio:</label>
+  <select id="cambio" [(ngModel)]="cambio">
+    <option value="manuale">Manuale</option>
+    <option value="automatico">Automatico</option>
+  </select>
+</div>
+<app-car [marca]="marca" [modello]="modello" [cambio]="cambio" (car)="addAuto($event)"></app-car>
+
+
+<ul *ngFor="let item of cars">
+  <div class="card" style="width: 18rem;"></div>
+  <img src="" class="card-img-top" alt="">
+  <div class="card-body">
+    <h2 class="card-title">{{ item.marca }}</h2>
+    <h5 class="card-title">{{ item.modello }}</h5>
+    <p class="card-text">Auto a cambio {{ item.cambio }}.</p>
+    <button class="btn btn-primary">Prenota</button>
+  </div>
+</ul>
