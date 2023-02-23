@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../car';
 import { CarService } from '../car.service';
 import { Router } from '@angular/router';
 import { CarComponent } from '../car/car.component';
@@ -28,14 +27,7 @@ export class GarageComponent implements OnInit {
     this.listCar = this.carService.getCar();
   }
 
-
-/*   cars: CarComponent[] = [];
-
-  marca: string = '';
-  modello: string = '';
-  cambio: string = '';
-
-  addAuto(nuovoAuto: CarComponent) {
-    this.cars.push(nuovoAuto);
-  } */
+  showCars(){
+    this.carService.getCar()
+  }
 }

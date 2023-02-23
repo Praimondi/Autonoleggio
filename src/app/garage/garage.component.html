@@ -91,3 +91,40 @@
 <app-car-form-reactive (sendedCar)="addCar($event)"></app-car-form-reactive>
 
 
+<div>
+<ul *ngFor="let item of listCar">
+  <div class="card" style="width: 18rem; margin: 20px">
+    <img
+      src="https://source.unsplash.com/random?{{ item.marca }},car"
+      class="card-img-top"
+      alt="..."
+      style="
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover;
+      "
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.marca }} {{ item.modello }}</h5>
+      <p class="card-text">Cambio {{ item.cambio }}</p>
+      <a href="#" class="btn btn-primary">Noleggia</a>
+    </div>
+  </div>
+</ul>
+</div>
+
+<!-- <button
+  (click)="showCars()"
+  style="
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 6px 12px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin-left: 6px;
+  "
+>
+  Aggiungi
+</button>
+ -->
+
