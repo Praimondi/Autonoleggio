@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-car',
@@ -6,10 +6,29 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./car.component.scss'],
 })
 export class CarComponent implements OnInit {
-  constructor() {}
+  marca: string;
+  modello: string;
+  cambio: string;
+
+  constructor() {
+    this.marca="";
+    this.modello="";
+    this.cambio="";
+  }
   ngOnInit(): void {}
 
-  @Input() marca: string = '';
+/*   marca: string = '';
+  modello: string = '';
+  cambio: string = '';
+
+  constructor( marca: string, modello: string, cambio: string) {
+    this.marca = marca;
+    this.modello = modello;
+    this.cambio = cambio;
+  }
+  ngOnInit(): void {} */
+
+/*   @Input() marca: string = '';
   @Input() modello: string = '';
   @Input() cambio: string = '';
 
@@ -21,5 +40,5 @@ export class CarComponent implements OnInit {
     nuovaAuto.modello = modello;
     nuovaAuto.cambio = cambio;
     this.car.emit(nuovaAuto);
-  };
+  }; */
 }

@@ -1,0 +1,34 @@
+<form [formGroup]="myForm">
+  <div>
+    <label for="txtMarca">Marca</label>
+    <input type="text" formControlName="txtMarca" placeholder="Marca">
+  </div>
+
+  <div>
+    <label for="txtModello">Modello</label>
+    <input type="text" formControlName="txtModello" placeholder="Modello">
+  </div>
+
+  <div>
+    <label for="txtCambio">Cambio</label>
+    <div>
+      <select
+        id="cambio"
+        formControlName="txtCambio"
+        style="
+          height: 40px;
+          width: 189px;
+          margin-left: 6px;
+          border-radius: 10px;
+          padding: 0px 12px;
+          border: 2px solid #000;
+        "
+      >
+        <option value="" disabled selected>Cambio</option>
+        <option value="Manuale">Manuale</option>
+        <option value="Automatico">Automatico</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" [disabled]="!myForm.valid" (click)="addNewCar()">Aggiungi</button>
+</form>
