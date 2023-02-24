@@ -6,11 +6,11 @@ import { CarComponent } from './car/car.component';
 })
 export class CarService {
   // lista vuota di auto
-  private listCar: CarComponent[];
+  listCar: CarComponent[] = [];
 
   // istanzia una lista vuota di auto
   constructor() {
-    this.listCar = [];
+    console.log(this.listCar)
   }
 
   // ritorna la lista di auto

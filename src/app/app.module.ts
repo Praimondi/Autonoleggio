@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { GarageComponent } from './garage/garage.component';
 import { CarComponent } from './car/car.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MonthToDayPricePipe } from './month-to-day-price.pipe';
 import { CarFormReactiveComponent } from './car-form-reactive/car-form-reactive.component';
 import { HeaderComponent } from './header/header.component';
+import { MonthToDayPricePipe } from 'src/pipes/month-to-day-price.pipe';
+import { CarService } from './car.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,9 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

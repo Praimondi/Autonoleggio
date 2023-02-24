@@ -1,70 +1,12 @@
-<!--
+<button (click)="onClickMostra()">Mostra Macchine</button>
+<button (click)="onClickAggiungi()">Aggiungi Auto</button>
 
-<div
-  style="
-    display: flex;
-    min-width: 100vw;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
-  "
->
-  <div>
-    <input
-      type="text"
-      id="marca"
-      [(ngModel)]="marca"
-      placeholder="Marca"
-      required
-      style="margin-left: 6px; padding: 6px 12px; border-radius: 10px"
-    />
-  </div>
-  <div>
-    <input
-      type="text"
-      id="modello"
-      [(ngModel)]="modello"
-      placeholder="Modello"
-      style="margin-left: 6px; padding: 6px 12px; border-radius: 10px"
-      required
-    />
-  </div>
-  <div>
-    <select
-      id="cambio"
-      [(ngModel)]="cambio"
-      style="
-        height: 40px;
-        width: 189px;
-        margin-left: 6px;
-        border-radius: 10px;
-        padding: 0px 12px;
-        border: 2px solid #000;
-      "
-      required
-    >
-      <option value="" disabled selected>Cambio</option>
-      <option value="Manuale">Manuale</option>
-      <option value="Automatico">Automatico</option>
-    </select>
-  </div>
-  <app-car
-    [marca]="marca"
-    [modello]="modello"
-    [cambio]="cambio"
-    (car)="addAuto($event)"
-  ></app-car>
+<div *ngIf="aggiungi">
+  <app-car-form-reactive (sendedCar)="forEventCloseForm($event)"></app-car-form-reactive>
 </div>
-<div
-  style="
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  "
->
-  <ul *ngFor="let item of cars">
+
+<div *ngIf="mostra">
+  <ul *ngFor="let item of listCar">
     <div class="card" style="width: 18rem; margin: 20px">
       <img
         src="https://source.unsplash.com/random?{{ item.marca }},car"
@@ -84,47 +26,3 @@
     </div>
   </ul>
 </div>
- -->
-
-
-
-<app-car-form-reactive (sendedCar)="addCar($event)"></app-car-form-reactive>
-
-
-<div>
-<ul *ngFor="let item of listCar">
-  <div class="card" style="width: 18rem; margin: 20px">
-    <img
-      src="https://source.unsplash.com/random?{{ item.marca }},car"
-      class="card-img-top"
-      alt="..."
-      style="
-        width: 100% !important;
-        height: 200px !important;
-        object-fit: cover;
-      "
-    />
-    <div class="card-body">
-      <h5 class="card-title">{{ item.marca }} {{ item.modello }}</h5>
-      <p class="card-text">Cambio {{ item.cambio }}</p>
-      <a href="#" class="btn btn-primary">Noleggia</a>
-    </div>
-  </div>
-</ul>
-</div>
-
-<!-- <button
-  (click)="showCars()"
-  style="
-    background-color: #0d6efd;
-    color: #fff;
-    padding: 6px 12px;
-    border: 2px solid blue;
-    border-radius: 10px;
-    margin-left: 6px;
-  "
->
-  Aggiungi
-</button>
- -->
-

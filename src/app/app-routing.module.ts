@@ -5,7 +5,7 @@ import { GarageComponent } from './garage/garage.component';
 import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
-  {path: '', component: HeaderComponent},
+  {path:'app-garage/mostra-auto', component: GarageComponent},
   {path:'app-garage', component: GarageComponent},
   {path:'app-car-form-reactive', component: CarFormReactiveComponent}
 ];

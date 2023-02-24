@@ -7,13 +7,14 @@ import { CarComponent } from '../car/car.component';
   selector: 'app-garage',
   templateUrl: './garage.component.html',
   styleUrls: ['./garage.component.scss'],
-  providers: [CarService],
 })
 export class GarageComponent implements OnInit {
   ngOnInit(): void {}
+  mostra: boolean = false;
+  aggiungi: boolean = false;
 
   // lista vuota di auto non ancora istanziata
-  listCar;
+  listCar: CarComponent[];
 
   // istanzia una lista vuota di auto tramite il getCar del service
   constructor(private route: Router, private carService: CarService) {
@@ -22,12 +23,17 @@ export class GarageComponent implements OnInit {
 
   // aggiunge un'auto tramite addcar e
   // la ritorna in locale con il getCar del service
-  addCar(sendedCar: CarComponent) {
-    this.carService.addCar(sendedCar);
+  forEventCloseForm(sendedBool: boolean) {
+    this.aggiungi = sendedBool
     this.listCar = this.carService.getCar();
   }
 
-  showCars(){
-    this.carService.getCar()
+  onClickMostra(){
+    this.mostra = !this.mostra
   }
+
+  onClickAggiungi(){
+    this.aggiungi = !this.aggiungi
+  }
+
 }
