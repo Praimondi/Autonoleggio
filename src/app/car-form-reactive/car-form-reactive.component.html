@@ -18,6 +18,21 @@
     </div>
 
     <div>
+      <label for="txtAnno">Anno</label>
+      <input type="text" formControlName="txtAnno" placeholder="Anno" style="margin-left: 6px; padding: 6px 12px; border-radius: 10px">
+    </div>
+
+    <div>
+      <label for="txtColore">Colore</label>
+      <input type="text" formControlName="txtColore" placeholder="Colore" style="margin-left: 6px; padding: 6px 12px; border-radius: 10px">
+    </div>
+
+    <div>
+      <label for="numPrezzoMensile">PrezzoMensile</label>
+      <input type="text" formControlName="numPrezzoMensile" placeholder="Prezzo Mensile" style="margin-left: 6px; padding: 6px 12px; border-radius: 10px">
+    </div>
+
+<!--     <div>
       <label for="txtCambio">Cambio</label>
       <div>
         <select
@@ -37,8 +52,8 @@
           <option value="Automatico">Automatico</option>
         </select>
       </div>
-    </div>
-    <button type="submit" [disabled]="!myForm.valid" (click)="addNewCar()">Aggiungi Auto</button>
+    </div> -->
+    <button class="btn btn-warning" type="submit" [disabled]="!myForm.valid" (click)="addNewCar()">Aggiungi Auto</button>
   </form>
 </div>
 

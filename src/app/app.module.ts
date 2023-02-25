@@ -9,6 +9,8 @@ import { CarFormReactiveComponent } from './car-form-reactive/car-form-reactive.
 import { HeaderComponent } from './header/header.component';
 import { MonthToDayPricePipe } from 'src/pipes/month-to-day-price.pipe';
 import { CarService } from './car.service';
+import { HttpClientModule } from '@angular/common/http'
+import { CarAPIService } from './car-api.service';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { CarService } from './car.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [CarService],
+  providers: [CarService, CarAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

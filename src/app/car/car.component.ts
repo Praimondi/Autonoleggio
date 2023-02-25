@@ -6,7 +6,10 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./car.component.scss'],
 })
 export class CarComponent implements OnInit {
-  marca: string;
+  constructor() {
+  }
+  ngOnInit(): void {}
+/*   marca: string;
   modello: string;
   cambio: string;
 
@@ -15,5 +18,5 @@ export class CarComponent implements OnInit {
     this.modello="";
     this.cambio="";
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {} */
 }

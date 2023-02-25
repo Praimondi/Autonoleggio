@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from '../car.service';
 import { CarComponent } from '../car/car.component';
+import { Car } from '../interfaces/car'
 
 @Component({
   selector: 'app-car-form-reactive',
@@ -18,15 +19,30 @@ export class CarFormReactiveComponent {
     this.myForm = fb.group({
       txtMarca: ['',[Validators.required]],
       txtModello: ['',[Validators.required]],
-      txtCambio: ['',[Validators.required]],
+      txtAnno: ['',[Validators.required]],
+      txtColore: ['',[Validators.required]],
+      numPrezzoMensile: [,[Validators.required]]
     })
   }
 
   addNewCar(){
-    const nuovaAuto = new CarComponent();
-    nuovaAuto.marca = this.myForm.get('txtMarca')!.value
+/*     const nuovaAuto = new CarComponent();
+ */
+    let amountOfCars = this.carService.getCar().length
+    let nuovaAuto: Car = {
+      marca: this.myForm.get('txtMarca')!.value,
+      modello: this.myForm.get('txtModello')!.value,
+      anno: this.myForm.get('txtAnno')!.value,
+      colore: this.myForm.get('txtColore')!.value,
+      prezzoMensile: this.myForm.get('numPrezzoMensile')!.value,
+      disponibile: true,
+      id: amountOfCars+1
+    }
+
+/*     nuovaAuto.marca = this.myForm.get('txtMarca')!.value
     nuovaAuto.modello = this.myForm.get('txtModello')!.value
-    nuovaAuto.cambio = this.myForm.get('txtCambio')!.value
+    nuovaAuto.cambio = this.myForm.get('txtCambio')!.value */
+
     this.carService.addCar(nuovaAuto);
 
 

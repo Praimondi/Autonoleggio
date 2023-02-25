@@ -1,27 +1,33 @@
-<button (click)="onClickMostra()">Mostra Macchine</button>
-<button (click)="onClickAggiungi()">Aggiungi Auto</button>
+<button class="btn btn-primary" (click)="onClickMostra()">Mostra Macchine</button>
+<span style="margin-right: 10px;"></span>
+<button class="btn btn-primary" (click)="onClickAggiungi()">Aggiungi Auto</button>
 
 <div *ngIf="aggiungi">
   <app-car-form-reactive (sendedCar)="forEventCloseForm($event)"></app-car-form-reactive>
 </div>
 
-<div *ngIf="mostra">
-  <ul *ngFor="let item of listCar">
-    <div class="card" style="width: 18rem; margin: 20px">
-      <img
-        src="https://source.unsplash.com/random?{{ item.marca }},car"
-        class="card-img-top"
-        alt="..."
-        style="
+<div *ngIf="mostra" class="row">
+  <ul *ngFor="let item of listCar" class="col-sm-3">
+    <div class="card" style="width: 18rem; margin: 20px; margin-left: 20px;">
+      <img src="https://source.unsplash.com/random?{{ item.marca }},car" class="card-img-top" alt="..." style="
           width: 100% !important;
           height: 200px !important;
           object-fit: cover;
-        "
-      />
+        " />
       <div class="card-body">
         <h5 class="card-title">{{ item.marca }} {{ item.modello }}</h5>
-        <p class="card-text">Cambio {{ item.cambio }}</p>
-        <a href="#" class="btn btn-primary">Noleggia</a>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Anno: {{item.anno}} </li>
+          <li class="list-group-item">Colore: {{ item.colore }}</li>
+          <li class="list-group-item">
+            Prezzo Mensile: {{ item.prezzoMensile | currency:'EUR'}}</li>
+          <li class="list-group-item">
+            Prezzo Mensile: {{ item.prezzoMensile | monthToDayPrice: item.prezzoMensile | currency:'EUR'}}</li>
+          <button class="btn btn-primary" (click)="showAlert(item.id)">Noleggia</button>
+        </ul>
+        <div *ngIf="!item.disponibile" class="alert alert-success">
+          Noleggio Effettuato con con successo!
+        </div>
       </div>
     </div>
   </ul>
