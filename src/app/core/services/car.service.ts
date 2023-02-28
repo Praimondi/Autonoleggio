@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CarComponent } from './car/car.component';
-import { Car } from './interfaces/car';
-
+import { Car } from '../../shared/car';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +8,7 @@ export class CarService {
 
   //listCar: CarComponent[] = [];
 
-  listCar: Car[] = []
+  listCar: Car[] = [];
 
   // istanzia una lista vuota di auto
   constructor() {

@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { CarService } from '../car.service';
-import { CarComponent } from '../car/car.component';
-import { Car } from '../interfaces/car'
+import { Car } from 'src/app/shared/car';
+import { CarService } from 'src/app/core/services/car.service';
 
 @Component({
   selector: 'app-car-form-reactive',

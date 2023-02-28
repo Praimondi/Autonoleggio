@@ -4,7 +4,7 @@
       style="display: flex;
       justify-content: center;align-items:
       center; margin-top: 5px;"
-      routerLink="/">
+      (click)="goToHomepage()">
     <h1 style="font-size: 62px;">
       {{"Autonoleggio" }}
     </h1>
@@ -13,16 +13,14 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/app-garage">Garage <span class="sr-only"></span></a>
-      </li>
+        <a class="nav-link" (click)="goToGaragePage()">Garage<span class="sr-only"></span></a>
+
+<!--         <a class="nav-link" routerLink='app-garage-page'>Garage<span class="sr-only"></span></a>
+ -->      </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Pricing</a>
+        <a class="nav-link" href=''>Pricing</a>
       </li>
     </ul>
   </div>
 </nav>
-
-<!-- <button type="button" class="btn btn-outline-dark bg-dark" ><a routerLink="/app-garage">Garage</a></button>
- -->
-<br>
 

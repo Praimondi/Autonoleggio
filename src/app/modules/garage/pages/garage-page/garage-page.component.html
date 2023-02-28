@@ -1,3 +1,4 @@
+<br>
 <button class="btn btn-primary" (click)="onClickMostra()">Mostra Macchine</button>
 <span style="margin-right: 10px;"></span>
 <button class="btn btn-primary" (click)="onClickAggiungi()">Aggiungi Auto</button>
@@ -22,7 +23,7 @@
           <li class="list-group-item">
             Prezzo Mensile: {{ item.prezzoMensile | currency:'EUR'}}</li>
           <li class="list-group-item">
-            Prezzo Mensile: {{ item.prezzoMensile | monthToDayPrice: item.prezzoMensile | currency:'EUR'}}</li>
+            Prezzo Giornaliero: {{ item.prezzoMensile | monthToDayPrice: item.prezzoMensile | currency:'EUR'}}</li>
           <button class="btn btn-primary" (click)="showAlert(item.id)">Noleggia</button>
         </ul>
         <div *ngIf="!item.disponibile" class="alert alert-success">
@@ -32,3 +33,4 @@
     </div>
   </ul>
 </div>
+

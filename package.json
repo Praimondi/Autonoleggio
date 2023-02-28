@@ -1,5 +1,5 @@
 {
-  "name": "autonoleggio",
+  "name": "autonoleggio-pg",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

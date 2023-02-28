@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GarageComponent } from './garage.component';
+import { GaragePageComponent } from './garage-page.component';
 
-describe('GarageComponent', () => {
-  let component: GarageComponent;
-  let fixture: ComponentFixture<GarageComponent>;
+describe('GaragePageComponent', () => {
+  let component: GaragePageComponent;
+  let fixture: ComponentFixture<GaragePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GarageComponent ]
+      declarations: [ GaragePageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GarageComponent);
+    fixture = TestBed.createComponent(GaragePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

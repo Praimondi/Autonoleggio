@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Car } from './interfaces/car';
-
+import { Car } from '../../shared/car';
 @Injectable({
   providedIn: 'root'
 })

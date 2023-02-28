@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { CarService } from '../car.service';
-import { Router } from '@angular/router';
-import { CarComponent } from '../car/car.component';
-import { Car } from '../interfaces/car';
-import { CarAPIService } from '../car-api.service';
 import { Subscription } from 'rxjs';
+import { Car } from 'src/app/shared/car';
+import { CarAPIService } from 'src/app/core/services/car-api.service';
+import { CarService } from 'src/app/core/services/car.service';
 
 @Component({
-  selector: 'app-garage',
-  templateUrl: './garage.component.html',
-  styleUrls: ['./garage.component.scss'],
+  selector: 'app-garage-page',
+  templateUrl: './garage-page.component.html',
+  styleUrls: ['./garage-page.component.scss']
 })
-export class GarageComponent implements OnInit {
+export class GaragePageComponent implements OnInit{
   mostra: boolean = false;
   aggiungi: boolean = false;
 
@@ -26,8 +24,8 @@ export class GarageComponent implements OnInit {
   // constructor(private route: Router, private carService: CarService) {
   constructor(private carService: CarService, private listCarApi: CarAPIService) {
     // this.listCar = carService.getCar();
-
   }
+  
   ngOnInit(): void {
     this.subscription = this.listCarApi.getCarList().subscribe((data: Car[]) => {
       this.listCar = data;
@@ -36,8 +34,8 @@ export class GarageComponent implements OnInit {
       })
       //this.listCar = data;
     });
-
   }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
@@ -70,7 +68,5 @@ export class GarageComponent implements OnInit {
         car.disponibile = !car.disponibile;
       }
     }
-    // this.showAlertMessage = !this.showAlertMessage;
   }
-
 }
