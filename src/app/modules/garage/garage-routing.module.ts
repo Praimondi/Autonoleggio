@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CarPreviewComponent } from './components/car-preview/car-preview.component';
+import { CarComponent } from './components/car/car.component';
+import { ListCarComponent } from './components/list-car/list-car.component';
 import { GaragePageComponent } from './pages/garage-page/garage-page.component';
-/* import { MailerPageComponent } from './pages/mailer-page/mailer-page.component';
-import { MailComponent, MailPreviewComponent } from './components'; */
 
 const routes: Routes = [
   {
     path: '',
-    component: GaragePageComponent
+    component: GaragePageComponent,
+    children:[
+      {path:'car', component: CarComponent},
+      {path:'carPreview', component: CarPreviewComponent},
+    ]
   },
 ];
 

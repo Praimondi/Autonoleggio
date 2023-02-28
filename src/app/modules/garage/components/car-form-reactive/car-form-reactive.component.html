@@ -32,27 +32,7 @@
       <input type="text" formControlName="numPrezzoMensile" placeholder="Prezzo Mensile" style="margin-left: 6px; padding: 6px 12px; border-radius: 10px">
     </div>
 
-<!--     <div>
-      <label for="txtCambio">Cambio</label>
-      <div>
-        <select
-          id="cambio"
-          formControlName="txtCambio"
-          style="
-            height: 40px;
-            width: 189px;
-            margin-left: 6px;
-            border-radius: 10px;
-            padding: 0px 12px;
-            border: 2px solid #000;
-          "
-        >
-          <option value="" disabled selected>Cambio</option>
-          <option value="Manuale">Manuale</option>
-          <option value="Automatico">Automatico</option>
-        </select>
-      </div>
-    </div> -->
+    
     <button class="btn btn-warning" type="submit" [disabled]="!myForm.valid" (click)="addNewCar()">Aggiungi Auto</button>
   </form>
 </div>

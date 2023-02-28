@@ -10,7 +10,7 @@ import { CarService } from 'src/app/core/services/car.service';
   styleUrls: ['./car-form-reactive.component.scss'],
 })
 export class CarFormReactiveComponent {
-  @Output() sendedCar = new EventEmitter();
+  @Output() sendedBoolOfCar = new EventEmitter();
 
   myForm: FormGroup;
 
@@ -38,15 +38,10 @@ export class CarFormReactiveComponent {
       id: amountOfCars+1
     }
 
-/*     nuovaAuto.marca = this.myForm.get('txtMarca')!.value
-    nuovaAuto.modello = this.myForm.get('txtModello')!.value
-    nuovaAuto.cambio = this.myForm.get('txtCambio')!.value */
-
     this.carService.addCar(nuovaAuto);
 
-
     this.myForm.reset();
-    this.sendedCar.emit(false);
+    this.sendedBoolOfCar.emit(false);
 
   }
 }

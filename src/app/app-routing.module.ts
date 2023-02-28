@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CoreModule } from './core/core.module';
-import { GarageModule } from './modules/garage/garage.module';
-import { GaragePageComponent } from './modules/garage/pages/garage-page/garage-page.component';
-import { HomeModule } from './modules/home/home.module';
-import { HomepageComponent } from './modules/home/pages/homepage/homepage.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SharedModule } from './shared/shared.module';
+
 
 const routes: Routes = [
 
